@@ -23,7 +23,7 @@ pipeline {
             steps {
                 bash '.simple-node-js-react-npm-app/jenkins/scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                sudo bash '.simple-node-js-react-npm-app/jenkins/scripts/kill.sh'
+                bash '.simple-node-js-react-npm-app/jenkins/scripts/kill.sh'
             }
         }
     }
