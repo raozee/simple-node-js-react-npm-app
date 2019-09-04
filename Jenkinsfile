@@ -11,17 +11,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sudo bash 'npm install'
+                bash 'npm install'
             }
         }
         stage('Test') {
             steps {
-                sudo bash '.simple-node-js-react-npm-app/jenkins/scripts/test.sh'
+                bash '.simple-node-js-react-npm-app/jenkins/scripts/test.sh'
             }
         }
         stage('Deliver') {
             steps {
-                sudo bash '.simple-node-js-react-npm-app/jenkins/scripts/deliver.sh'
+                bash '.simple-node-js-react-npm-app/jenkins/scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
                 sudo bash '.simple-node-js-react-npm-app/jenkins/scripts/kill.sh'
             }
