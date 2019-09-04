@@ -16,14 +16,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sudo bash './jenkins/scripts/test.sh'
+                sudo bash '.simple-node-js-react-npm-app/jenkins/scripts/test.sh'
             }
         }
         stage('Deliver') {
             steps {
-                sudo bash './jenkins/scripts/deliver.sh'
+                sudo bash '.simple-node-js-react-npm-app/jenkins/scripts/deliver.sh'
                 input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                sudo bash './jenkins/scripts/kill.sh'
+                sudo bash '.simple-node-js-react-npm-app/jenkins/scripts/kill.sh'
             }
         }
     }
